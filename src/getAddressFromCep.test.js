@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 var global.fetch = fetch;
 
 describe('Test the functions of the app', () => {
-  it('deve retornar os dados quando passamos um cep válido', async () => {
+  it('Should return the data when given a valid postal code', async () => {
     const address = await getAddressFromCep('30130010');
     expect(address.cep).toBe('30130-010');
     expect(address.logradouro).toBe('Praça Sete de Setembro');
@@ -12,21 +12,21 @@ describe('Test the functions of the app', () => {
     expect(address.uf).toBe('MG');
   });
   
-  it('deve aceitar ceps com hífen ou sem hífen', async () => {
+  it('should acept a postal code with and without "-"', async () => {
     let address = await getAddressFromCep('30130010');
     expect(address.cep).toBe('30130-010');
     address = await getAddressFromCep('30130-010');
     expect(address.cep).toBe('30130-010');
   });
   
-  it('Deve lançar erro "Você precisa passar um CEP" quando passar cep vazio', async () => {
+  it('Should throw an error when given a empty input', async () => {
     const emptyCep = '';
     await expect(getAddressFromCep(emptyCep)).rejects.toThrow(
-      new Error('Você precisa passar um CEP')
+      new Error('You need to input a valid postal code!')
     );
   });
   
-  it('Deve lançar erro quando passar cep inválido', async () => {
+  it('Should throw an error when given an invalid cep', async () => {
     const invalidCep = 'XXXXX-XXX';
     const invalidCepLessDigits = '00000-00';
     const invalidCepMoreDigits = '00000-0000';
