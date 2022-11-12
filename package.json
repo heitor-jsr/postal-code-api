@@ -1,0 +1,33 @@
+{
+  "name": "viacep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite --open",
+    "lint": "eslint ./src",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heitor-jsr/postal-code-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heitor-jsr/postal-code-api/issues"
+  },
+  "homepage": "https://github.com/heitor-jsr/postal-code-api#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.0",
+    "sweetalert2": "^11.6.8",
+    "vite": "^3.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-plugin-react": "^7.31.10"
+  },
+  "type": "module"
+}
